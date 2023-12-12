@@ -2,9 +2,9 @@
 import { Dispatch, FormEvent, SetStateAction, useState } from 'react'
 import IpInfoContainer from './IpInfoContainer'
 import Image from 'next/image'
-import { getMapData } from '../api/map/route'
 import MapComponent from './Map'
 import Spinner from './Spinner'
+import { getMapData } from '../utils/getMapData'
 
 // type FormProps = {
 //   ipData: MapData
