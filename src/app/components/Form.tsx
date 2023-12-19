@@ -1,5 +1,5 @@
 'use client'
-import { Dispatch, FormEvent, SetStateAction, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import IpInfoContainer from './IpInfoContainer'
 import Image from 'next/image'
 import MapComponent from './Map'
@@ -17,6 +17,16 @@ const Form = () => {
   const [status, setStatus] = useState<'submitting' | 'successed' | 'idle'>(
     'idle'
   )
+
+  useEffect(() => {
+    // Example code that uses window object
+    if (typeof window !== 'undefined') {
+      // Your code that uses window
+      window.addEventListener('load', () => {
+        // Do something when the window has loaded
+      })
+    }
+  }, [])
 
   const handleOnClick = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -81,6 +91,6 @@ const Form = () => {
       )}
     </>
   )
-} 
+}
 
 export default Form
