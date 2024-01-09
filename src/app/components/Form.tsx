@@ -6,10 +6,7 @@ import MapComponent from './Map'
 import Spinner from './Spinner'
 import { getMapData } from '../utils/getMapData'
 
-// type FormProps = {
-//   ipData: MapData
-//   setIpData: Dispatch<SetStateAction<MapData>>
-// }
+
 
 const Form = () => {
   const [ipData, setIpData] = useState<MapData>({} as MapData)
@@ -18,15 +15,7 @@ const Form = () => {
     'idle'
   )
 
-  useEffect(() => {
-    // Example code that uses window object
-    if (typeof window !== 'undefined') {
-      // Your code that uses window
-      window.addEventListener('load', () => {
-        // Do something when the window has loaded
-      })
-    }
-  }, [])
+
 
   const handleOnClick = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -42,7 +31,8 @@ const Form = () => {
 
   const location = ipData.location
   const noData = Object.keys(ipData).length === 0
-  return (
+
+  const content = (
     <>
       <form onSubmit={handleOnClick}>
         <h1 className="fs-700 text-white text-medium">IP Address Tracker</h1>
@@ -91,6 +81,7 @@ const Form = () => {
       )}
     </>
   )
+  return typeof window !== undefined && content
 }
 
 export default Form
