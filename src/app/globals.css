@@ -82,12 +82,7 @@ body {
   overflow-x: hidden;
 }
 
-/* make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
+
 
 /* make form elements easier to work with */
 input,
@@ -158,7 +153,7 @@ select {
 }
 
 
-form {
+.form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -181,18 +176,6 @@ input {
   border-top-left-radius: .8rem;
 }
 
-/* button {
-  cursor: pointer;
-  background: var(--clr-dark);
-  padding: 1.2rem 1.5rem;
-  border-bottom-right-radius: .8rem;
-  border-top-right-radius: .8rem;
-
-}
-
-button:focus {
-  background: hsla(0, 0%, 17%, 0.814);
-} */
 
 .input-con {
   display: flex;

@@ -2,29 +2,12 @@ import IpInformation from './IpInformation'
 
 type IpInfoContainerProps = {
   ipData: MapData
-  noData: boolean
 }
 
-const IpInfoContainer = ({ ipData, noData }: IpInfoContainerProps) => {
+const IpInfoContainer = ({ ipData }: IpInfoContainerProps) => {
   const errorCode = ipData.code === 422
   const { ip, location, isp } = ipData
 
-  if (noData) {
-    return (
-      <div className="app-container">
-        <div className="app-content bg-white text-dark">
-          <IpInformation title="IP Address " information="83.24.213.173" />
-          <IpInformation title="Location" information="PL, Warsaw" />
-          <IpInformation title="Timezone" information="+02:00" />
-          <IpInformation
-            title="ISP"
-            information="Orange Polska Spolka Akcyjna"
-            noLine="no-line"
-          />
-        </div>
-      </div>
-    )
-  }
   if (errorCode) {
     return (
       <div className="ip-con fs-500">
