@@ -37,7 +37,9 @@ export default function Home() {
           </Suspense>
         </div>
       </div>
-      <MapComponent lat={location.lat} lng={location.lng} />
+      <Suspense fallback={<div>Loading...</div>}>
+        <MapComponent lat={location.lat} lng={location.lng} />
+      </Suspense>
     </main>
   )
 }
